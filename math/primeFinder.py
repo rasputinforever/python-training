@@ -20,7 +20,7 @@ def findRoot(val):
 def loopOverAll(loop):
     for i in range(loop):
         findRoot(i + 1)
-    print(primeArr)g
+    print(primeArr)
     print("There are", len(primeArr), "primes from 1 to ", loop)
 
 loopOverAll(int(loopCount))

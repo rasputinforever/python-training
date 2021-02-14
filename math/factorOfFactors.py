@@ -14,7 +14,6 @@ def findfactor(x):
     if len(factorArr) != 1:
         print(x, "is NOT a prime")
         factorOffactor(factorArr)
-        print("divisors", factorArr)
     else:
         print(x, 'IS a prime!')
 
@@ -27,7 +26,8 @@ def factorOffactor(arr):
             if (i % (i - j)) == 0 and i != (i-j) and (i - j) != 1:
                 factorOffactorArr.append(i - j)
         if len(factorOffactorArr) > 0:
-            arr[factorIndex] = factorOffactorArr
-            factorOffactor(arr[factorIndex])
-    
+            print(arr[factorIndex], " factors:", factorOffactorArr)
+            factorOffactor(factorOffactorArr)
+# something worth adding: each callback should increase indent
+
 findfactor(x)
