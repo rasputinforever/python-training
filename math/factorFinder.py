@@ -1,11 +1,11 @@
 # FIRST: Takes in a user-input value and returns IF a number is prime
-# IF NOT PRIME: returns all ROOTs
+# IF NOT PRIME: returns all FACTORS
 
 x = input("What number would you like to find all roots?")
 
 rootArr = []
 
-def findRoot(x):
+def findFactors(x):
     for i in range(int(x)):
         if (int(x) % (int(x) - i)) == 0:
             rootArr.append(int(x) - i)
@@ -15,4 +15,4 @@ def findRoot(x):
     else:
         print(x, 'IS a prime!')
     
-findRoot(x)
+findFactors(x)
