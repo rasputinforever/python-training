@@ -1,3 +1,5 @@
+# Returns an array of primes from 1 to USER INPUT value
+
 loopCount = input("FInd all primes from 1 to _________:")
 
 primeArr = []
