@@ -26,8 +26,9 @@ def factorOffactor(arr):
             if (i % (i - j)) == 0 and i != (i-j) and (i - j) != 1:
                 factorOffactorArr.append(i - j)
         if len(factorOffactorArr) > 0:
-            print(arr[factorIndex], " factors:", factorOffactorArr)
+            print(arr[factorIndex], "factors:", factorOffactorArr)
             factorOffactor(factorOffactorArr)
 # something worth adding: each callback should increase indent
+# also, it's not exactly right
 
 findfactor(x)

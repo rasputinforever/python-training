@@ -9,3 +9,5 @@ Some hand-written python scripts.
 * primeFinder: takes in user input and returns array of all PRIMES from 1 to user input.
 
 * factorOfFactor: takes in user input, gets list of all factors, and for each factor, replaces the factor with an array of factors for that factor
+
+* primeRoots: delivers a list of all roots of a given value
