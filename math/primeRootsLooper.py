@@ -1,5 +1,5 @@
+# loops over all numbers from X (user input) to 1, delivering all roots of each and ending with an array of each of the primes found
 x = input("What number?")
-
 
 rootArr = []
 primeArr = []
