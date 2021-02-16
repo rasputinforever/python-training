@@ -13,3 +13,5 @@ Some hand-written python scripts.
 * primeRoots: delivers a list of all roots of a given value
 
 * primeRootsLooper: loops over primeRoots (same functionality, not imported) from a user input value to 1, showing hte roots of each value or if that value is a prime
+
+![Prime Looper]("./assets/prime-looper-example.PNG")
