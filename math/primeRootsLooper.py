@@ -23,6 +23,7 @@ def allRoots(x):
         rootArr.clear()
     else:
         print(x, "is a PRIME number!")
+        rootArr.clear()
         primeArr.append(x)
 
 
