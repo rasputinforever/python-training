@@ -36,3 +36,4 @@ def primeLooper(val):
 
 primeLooper(x)
 
+## very slow as it manually checks every single divisor
