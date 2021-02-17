@@ -18,6 +18,6 @@ Some hand-written python scripts.
 
 * primeRootsLooperFaster: adds a step to previous version. First, it goes from 1 to chosen value. It loggs all primes as it goes. It uses the arr of primes before moving to process in previous version. Previous version improved further by cutting checked vals by 2.
 
-* primeRootsCounter: same as above, however takes in user defined root-count and displays all vals with a number of roots >= to the specified value.
+* primeRootsCounter: same as above, however takes in user defined root-count and displays all vals with a number of roots >= to the specified value. (NOTE: Currently Not Working)
 
 ![Root Counter](./assets/prime-root-counter.PNG)

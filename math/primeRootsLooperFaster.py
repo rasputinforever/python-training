@@ -27,8 +27,6 @@ def loopOverAll(x):
         if y == x and len(rootArr) > 0:
             rootArr.append(y)
             break
-        elif y > (x * 0.51):
-            break
         elif y > 1 and getMod(x, y) == 0:   
             rootArr.append(y)
             x = x / y
