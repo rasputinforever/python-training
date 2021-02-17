@@ -14,6 +14,6 @@ Some hand-written python scripts.
 
 * primeRootsLooper: loops over primeRoots (same functionality, not imported) from a user input value to 1, showing hte roots of each value or if that value is a prime
 
-![Prime Looper]("./assets/prime-looper-example.PNG")
+![Prime Looper](./assets/prime-looper-example.PNG)
 
 * primeRootsLooperFaster: adds a step to previous version. First, it goes from 1 to chosen value. It loggs all primes as it goes. It uses the arr of primes before moving to process in previous version. Previous version improved further by cutting checked vals by 2.
