@@ -7,66 +7,57 @@
 </head> 
 
 <body> 
-
+<script type="text/javascript" src="./js/insertTerminals.js"></script>
 <script type="text/javascript"> 
-// output functions are configurable.  This one just appends some text
-// to a pre element.
-function outf(text) { 
-    var mypre = document.getElementById("output"); 
-    mypre.innerHTML = mypre.innerHTML + text; 
-} 
-function builtinRead(x) {
-    if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
-            throw "File not found: '" + x + "'";
-    return Sk.builtinFiles["files"][x];
-}
 
-// Here's everything you need to run a python program in skulpt
-// grab the code from your textarea
-// get a reference to your pre element for output
-// configure the output function
-// call Sk.importMainWithBody()
-function runit() { 
-   var prog = document.getElementById("yourcode").value; 
-   var mypre = document.getElementById("output"); 
-   mypre.innerHTML = ''; 
-   Sk.pre = "output";
-   Sk.configure({output:outf, read:builtinRead}); 
-   (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
-   var myPromise = Sk.misceval.asyncToPromise(function() {
-       return Sk.importMainWithBody("<stdin>", false, prog, true);
-   });
-   myPromise.then(function(mod) {
-       console.log('success');
-   },
-       function(err) {
-       console.log(err.toString());
-   });
-} 
 </script> 
 
-<h3>My Fun Math Code</h3> 
-<form> 
-<textarea id="yourcode" cols="40" rows="10">
-    # FIRST: Takes in a user-input value and returns IF a number is prime
-# IF NOT PRIME: returns all FACTORS
-
-x = input("What number would you like to find all roots?")
+<h3>Prime Checker</h3> 
+<form id="codeContainer"> 
+<textarea id="yourcode" cols="100" rows="40">
+# loops over all numbers from X (user input) to 1, delivering all roots of each and ending with an array of each of the primes found
+x = input("What number?")
 
 rootArr = []
+primeArr = []
 
-def findFactors(x):
-    for i in range(int(x)):
-        if (int(x) % (int(x) - i)) == 0:
-            rootArr.append(int(x) - i)
-    if len(rootArr) > 2:
-        print(x, "is NOT a prime")
-        print("divisors", rootArr)
+def getMod(x, y):
+    return x % y
+
+def getRoot(num):
+    curNum = int(num)
+    for i in range(curNum):
+        if i != 0 and getMod(curNum, i + 1) == 0:
+            rootArr.append(i + 1)
+            curNum = int(curNum / (i + 1))
+            getRoot(curNum)
+            break
+
+def allRoots(x):
+    getRoot(x)
+    if len(rootArr) > 1:
+        print("All roots of", x, ":", rootArr)
+        rootArr.clear()
     else:
-        print(x, 'IS a prime!')
+        print(x, "is a PRIME number!")
+        rootArr.clear()
+        primeArr.append(x)
+
+
+def primeLooper(val):
+    j = int(val)
+    for i in range(j):
+        allRoots(j - i)
+    print("All primes from", j, "to 1:",primeArr)
+        
+
+primeLooper(x)
+
+## very slow as it manually checks every single divisor
     
-findFactors(x)
-</textarea><br /> 
+    
+</textarea>
+<br /> 
 <button type="button" onclick="runit()">Run</button> 
 </form> 
 <pre id="output" ></pre> 
